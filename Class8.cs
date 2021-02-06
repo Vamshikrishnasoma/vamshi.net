@@ -4,26 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fact
+namespace revnumber
 {
-    class maxnumber
+    class strongnumber
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a Number:");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int max = 0;
+            Console.Write("Enter a Number :");
+            int num = int.Parse(Console.ReadLine());
+            int copy = num;
+            int sum = 0;
+          
+         
             while(num!=0)
             {
+                int fact = 1;
+                int start = 1;
                 int digit = num % 10;
-                if(max<digit)
+                while (start<=digit)
                 {
-                    max = digit;
-                    
+                    fact = fact * start;
+                    start++;
                 }
                 num = num / 10;
+                sum = sum + fact;
             }
-            Console.WriteLine(max);
+            Console.WriteLine(sum);
+            if (copy == sum)
+            {
+                Console.WriteLine($"{copy} is strong number");
+            }
+            else
+            {
+                Console.WriteLine($"{copy} is not a strong number");
+            }
         }
     }
 }

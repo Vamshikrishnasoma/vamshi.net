@@ -4,19 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fact
+namespace revnumber
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter range:");
+            Console.Write("Enter a number:");
             int num = int.Parse(Console.ReadLine());
-            for (int i = 1; i <= num; i++)
+            int copy = num;
+            int rev = 0;
+            while(num!=0)
             {
-                Console.WriteLine(i);
+                int digit = num % 10;
+                rev = rev * 10 + digit;
+                num = num / 10;
             }
-
+            Console.WriteLine($"reverse number is:{rev}");
+            Console.ReadLine();
         }
     }
 }

@@ -4,25 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fact
+namespace revnumber
 {
-    class avg
+    class factorial
     {
         static void Main(string[] args)
         {
             Console.Write("Enter a number:");
             int num = int.Parse(Console.ReadLine());
-            int count = 0;
-            int sum = 0;
-            while (num != 0)
+            int start = 1;
+            int fact = 1;
+            while(start<=num)
             {
-                int digit = num % 10;
-                sum = sum + digit;
-                num = num / 10;
-                count++;
+                fact = fact * start;
+                start++;
             }
-            double avg = sum / count;
-            Console.WriteLine($"average of digits is:{avg}");
+            Console.WriteLine(fact);
         }
+
     }
 }
