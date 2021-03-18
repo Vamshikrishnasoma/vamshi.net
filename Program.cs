@@ -1,27 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace revnumber
+namespace WindowsFormsApp4
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            Console.Write("Enter a number:");
-            int num = int.Parse(Console.ReadLine());
-            int copy = num;
-            int rev = 0;
-            while(num!=0)
-            {
-                int digit = num % 10;
-                rev = rev * 10 + digit;
-                num = num / 10;
-            }
-            Console.WriteLine($"reverse number is:{rev}");
-            Console.ReadLine();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
